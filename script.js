@@ -275,29 +275,25 @@ function ifChecked(event) {
   }
 }
 
-// Ajuste do texto no input principal para telas menores...
-
-const mainInput = document.getElementById("input");
+input.addEventListener("input", adjustMobileInputFont);
+window.addEventListener("resize", adjustMobileInputFont);
 
 function adjustMobileInputFont() {
-  const length = mainInput.value.length;
+  const length = input.value.length;
 
   if (window.innerWidth <= 768) {
     if (length >= 1 && length <= 20) {
-      mainInput.style.fontSize = "1rem";
+      input.style.fontSize = "1rem";
     } else if (length > 20 && length <= 30) {
-      mainInput.style.fontSize = "0.95rem";
+      input.style.fontSize = "0.95rem";
     } else if (length > 30 && length <= 40) {
-      mainInput.style.fontSize = "0.9rem";
+      input.style.fontSize = "0.9rem";
     } else if (length > 40 && length <= 50) {
-      mainInput.style.fontSize = "0.85rem";
+      input.style.fontSize = "0.85rem";
     } else if (length > 50) {
-      mainInput.style.fontSize = "0.8rem";
+      input.style.fontSize = "0.8rem";
     }
   } else {
-    mainInput.style.fontSize = "1rem";
+    input.style.fontSize = "1rem";
   }
 }
-
-mainInput.addEventListener("input", adjustMobileInputFont);
-window.addEventListener("resize", adjustMobileInputFont);
