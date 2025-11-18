@@ -23,8 +23,6 @@ body {
     rgba(113, 42, 92, 1) 0.1%,
     rgba(40, 25, 46, 1) 90%
   );
-
-  /* background-attachment: fixed; */
 }
 
 .mainContainer {
@@ -98,14 +96,6 @@ h1 {
   height: 86%;
   /* flex: 1 garante que esse container pegue todo o espaço restante 86%*/
   flex: 1;
-
-  /*OverFlow: controla o que acontece quando o conteúdo é maior do que o container*/
-
-  /* Eixo Y (Vertical, cima ↕ baixo) */
-  /* auto: Mostra o scroll somente quando o conteúdo não cabe */
-  /* overflow-y: auto; */
-  /* Eixo Y (Horizontal, esquerda ↔ direita ) */
-  /* overflow-x: hidden; */
 }
 
 .mainUl {
@@ -133,7 +123,6 @@ h1 {
   border-radius: 1rem;
   margin: 0.5rem;
   background-color: var(--branco);
-  /* overflow: auto; */
 }
 
 .checkBoxJs {
