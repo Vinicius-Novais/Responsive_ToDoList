@@ -222,10 +222,6 @@ h1 {
   transform: scale(1.5);
 }
 
-.svgEditJs,
-.svgDeleteJs {
-}
-
 .inputJs {
   display: flex;
   text-wrap: nowrap;
@@ -235,18 +231,15 @@ h1 {
   margin-right: 0.2rem;
 }
 
-/* =======================================================
-   📱 RESPONSIVIDADE — MOBILE E TABLET
-   ======================================================= */
+/*RESPONSIVIDADE — MOBILE E TABLET*/
 
-/* Tablets (até 1024px) */
 @media (max-width: 1024px) {
   body {
     padding-top: 2rem;
   }
 
   .mainContainer {
-    width: 80vw;
+    width: 100vw;
     min-height: 90vh;
   }
 
@@ -255,9 +248,7 @@ h1 {
   }
 }
 
-/* Celulares grandes (até 768px) */
 @media (max-width: 768px) {
-  /* Corpo e container */
   body {
     justify-content: flex-start;
     align-items: stretch;
@@ -274,7 +265,6 @@ h1 {
     box-sizing: border-box;
   }
 
-  /* Cabeçalho */
   h1 {
     font-size: 1.6rem;
     text-align: center;
@@ -282,7 +272,6 @@ h1 {
     word-break: break-word;
   }
 
-  /* Input + Botão de adicionar */
   .mainInputAndButtonDiv {
     flex-direction: row;
     justify-content: center;
@@ -312,7 +301,6 @@ h1 {
     border-radius: 50%;
   }
 
-  /* Itens da lista */
   .liJs {
     display: flex;
     align-items: center;
@@ -333,10 +321,10 @@ h1 {
     flex: 1;
     min-width: 0;
     font-size: 0.95rem;
-    font-weight: 600; /* deixa em negrito */
-    white-space: nowrap; /* impede quebra de linha */
-    text-overflow: ellipsis; /* adiciona "..." se o texto for muito longo */
-    overflow: hidden; /* corta o excesso */
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     text-align: left;
     margin: 0 0.3rem;
   }
