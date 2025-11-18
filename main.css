@@ -1,0 +1,358 @@
+:root {
+  --cinzaClaro: #e9ecef;
+  --branco: #f8f9fa;
+  --cinza: #6c757d;
+  --preto: #0a0908;
+  --vermelho: #e63946;
+  --laranja: #e9c46a;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6rem;
+  font-family: "Quicksand", sans-serif;
+  height: 85vh; /* ocupa toda a altura da tela */
+  background-image: radial-gradient(
+    circle farthest-corner at 50.3% 47.3%,
+    rgba(113, 42, 92, 1) 0.1%,
+    rgba(40, 25, 46, 1) 90%
+  );
+
+  /* background-attachment: fixed; */
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-color: var(--branco);
+  border-style: solid;
+  border-radius: 0.2rem;
+  width: 30rem;
+  min-height: 35rem;
+
+  max-height: fit-content;
+
+  justify-content: flex-start;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+h1 {
+  color: var(--branco);
+  display: flex;
+  /* cima direita baixo esquerda*/
+  margin: 2.5rem 0 3rem 0;
+  width: 100%;
+  height: 7%;
+  justify-content: center;
+}
+
+.mainInputAndButtonDiv {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 7%;
+  padding: 0;
+  border: 0;
+  margin: 0rem;
+}
+.mainInputAndButtonDiv svg {
+  color: var(--branco);
+  height: 1.8rem;
+  align-self: center;
+}
+
+.mainInputAndButtonDiv button {
+  display: flex;
+  margin: 0.6rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.mainInputAndButtonDiv button:hover {
+  cursor: pointer;
+}
+
+.mainInputAndButtonDiv input {
+  display: flex;
+  align-self: center;
+  width: 70%;
+  height: 2.1rem;
+  border-radius: 2rem;
+  outline-style: none;
+  border: 0.2rem solid #333;
+  text-align: center;
+}
+
+.newItemContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 86%;
+  /* flex: 1 garante que esse container pegue todo o espaço restante 86%*/
+  flex: 1;
+
+  /*OverFlow: controla o que acontece quando o conteúdo é maior do que o container*/
+
+  /* Eixo Y (Vertical, cima ↕ baixo) */
+  /* auto: Mostra o scroll somente quando o conteúdo não cabe */
+  /* overflow-y: auto; */
+  /* Eixo Y (Horizontal, esquerda ↔ direita ) */
+  /* overflow-x: hidden; */
+}
+
+.mainUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.mainUl:first-child {
+  margin-top: 1rem;
+}
+
+/* Javascript */
+
+.liJs {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: 90%;
+  height: 2.1rem;
+  align-self: center;
+  border: 0.2rem solid #333;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  background-color: var(--branco);
+  /* overflow: auto; */
+}
+
+.checkBoxJs {
+  appearance: none;
+  position: relative; /* Criando o contexto para o ::after */
+  display: flex;
+  flex-shrink: 0;
+  margin: 0.2rem;
+  border: 0.125rem solid var(--preto);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 1rem;
+}
+.checkBoxJs:checked::after {
+  content: ""; /* necessário para o after funcionar... */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 1.1rem;
+  height: 1.1rem;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='black'%3E%3Cpath d='M494.328,98.756l-33.279-33.279c-9.99-9.99-26.185-9.99-36.175,0L172.007,318.344c-3.877,3.877-10.163,3.877-14.04,0L87.11,247.488c-9.99-9.99-26.185-9.99-36.175,0l-33.26,33.26c-9.99,9.99-9.99,26.185,0,36.175l129.581,129.581c9.997,9.997,26.209,9.989,36.194-0.019l310.896-311.572C504.318,124.919,504.309,108.738,494.328,98.756z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkBoxJs:hover {
+  cursor: pointer;
+}
+
+.checkBoxJs:checked {
+  background-color: #0c7489;
+}
+
+.toggleCheckBoxJs {
+  text-decoration: line-through;
+  text-decoration-color: var(--preto);
+
+  font-style: italic;
+}
+
+.spanJs {
+  display: flex;
+  text-wrap: nowrap;
+  width: 95%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  overflow: hidden;
+  color: var(--preto);
+}
+
+.editButtonJs,
+.deleteButtonJs {
+  display: flex;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.7rem;
+  margin-left: 0.05rem;
+  margin-right: 0.2rem;
+}
+
+.editButtonJs:hover,
+.deleteButtonJs:hover {
+  cursor: pointer;
+}
+
+.editButtonJs {
+  background-color: var(--laranja);
+}
+.svgEditJs {
+  stroke-width: 0.7px;
+  transform: scale(1.4);
+}
+
+.deleteButtonJs {
+  background-color: var(--vermelho);
+}
+.svgDeleteJs {
+  color: var(--preto);
+  stroke-width: 45px;
+  transform: scale(1.5);
+}
+
+.svgEditJs,
+.svgDeleteJs {
+}
+
+.inputJs {
+  display: flex;
+  text-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+  width: 95%;
+  margin-right: 0.2rem;
+}
+
+/* =======================================================
+   📱 RESPONSIVIDADE — MOBILE E TABLET
+   ======================================================= */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 2rem;
+  }
+
+  .mainContainer {
+    width: 80vw;
+    min-height: 90vh;
+  }
+
+  .mainInputAndButtonDiv input {
+    width: 80%;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  /* Corpo e container */
+  body {
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 0;
+    overflow-x: hidden;
+  }
+
+  .mainContainer {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1.2rem 0.8rem;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+
+  /* Cabeçalho */
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 1rem 0 1.2rem 0;
+    word-break: break-word;
+  }
+
+  /* Input + Botão de adicionar */
+  .mainInputAndButtonDiv {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    width: 90%;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+  }
+
+  .mainInputAndButtonDiv input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
+  }
+
+  .mainInputAndButtonDiv button {
+    flex-shrink: 0;
+    padding: 0.3rem;
+    border-radius: 50%;
+  }
+
+  /* Itens da lista */
+  .liJs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    width: 100%;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+  }
+
+  .checkBoxJs {
+    flex-shrink: 0;
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+
+  .spanJs {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+    font-weight: 600; /* deixa em negrito */
+    white-space: nowrap; /* impede quebra de linha */
+    text-overflow: ellipsis; /* adiciona "..." se o texto for muito longo */
+    overflow: hidden; /* corta o excesso */
+    text-align: left;
+    margin: 0 0.3rem;
+  }
+
+  .editButtonJs,
+  .deleteButtonJs {
+    flex-shrink: 0;
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+  .editButtonJs {
+    margin-right: 0.02rem;
+  }
+
+  .svgEditJs,
+  .svgDeleteJs {
+    transform: scale(1.2);
+  }
+}
