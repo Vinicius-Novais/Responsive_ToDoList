@@ -1,6 +1,6 @@
 {
   "name": "To-Do List",
-  "short_name": "To-Do",
+  "short_name": "To Do",
   "description": "Um aplicativo rápido e moderno para organizar suas tarefas.",
   "start_url": "./index.html",
   "scope": "./",
