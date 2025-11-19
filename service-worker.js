@@ -44,3 +44,32 @@ self.addEventListener("activate", (event) => {
 
   self.clients.claim(); // ativa imediatamente
 });
+// ====================================
+// ETAPA 5 – INTERCEPTAR REQUISIÇÕES (FETCH)
+// ====================================
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      // Se existir no cache, devolve
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      // Se não existir no cache → busca da internet
+      return fetch(event.request)
+        .then((networkResponse) => {
+          // Salva no cache para uso futuro
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        })
+        .catch(() => {
+          // ⚠️ Aqui você pode definir um fallback offline
+          // Ex: retornar uma página offline.html
+          return caches.match("/responsive-to-do-list/index.html");
+        });
+    })
+  );
+});
