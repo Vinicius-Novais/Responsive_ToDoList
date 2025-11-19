@@ -24,3 +24,23 @@ self.addEventListener("install", (event) => {
     })
   );
 });
+// ================================
+// ETAPA 4 – ATIVAR + LIMPAR CACHE ANTIGO
+// ================================
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log("🗑️ Deletando cache antigo:", cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+
+  self.clients.claim(); // ativa imediatamente
+});
