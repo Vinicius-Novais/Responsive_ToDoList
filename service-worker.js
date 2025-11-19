@@ -3,7 +3,7 @@
 // ================================
 
 // Nome da versão do cache
-const CACHE_NAME = "todo-app-v1";
+const CACHE_NAME = "todo-app-v2";
 
 // Arquivos que serão salvos para funcionar offline
 const FILES_TO_CACHE = [
