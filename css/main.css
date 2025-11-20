@@ -233,6 +233,7 @@ h1 {
 
 @media (max-width: 768px) {
   body {
+    display: block;
     justify-content: flex-start;
     align-items: stretch;
     padding-top: 0;
@@ -261,7 +262,6 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-
     width: 90%;
     flex-wrap: nowrap;
     margin: 0 auto;
