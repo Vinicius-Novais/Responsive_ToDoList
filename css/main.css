@@ -221,10 +221,6 @@ h1 {
 /*RESPONSIVIDADE*/
 
 @media (max-width: 1024px) {
-  body {
-    padding-top: 2rem;
-  }
-
   .mainContainer {
     width: 100vw;
     min-height: 90vh;
