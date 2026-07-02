@@ -1,6 +1,6 @@
 # 📝 Responsive To Do List
 
-Aplicação de lista de tarefas responsiva e instalável (PWA), construída com HTML, CSS e JavaScript puros — sem frameworks e sem bibliotecas externas.
+Aplicação de lista de tarefas responsiva e instalável como app (PWA), construída com HTML, CSS e JavaScript vanilla.
 
 🔗 **[Ver o projeto no ar](https://vinicius-novais.github.io/Responsive_ToDoList/)**
 
@@ -8,18 +8,22 @@ Aplicação de lista de tarefas responsiva e instalável (PWA), construída com 
 
 ## ✨ Funcionalidades
 
-- Adicionar, concluir e remover tarefas
-- Layout responsivo, adaptado para celular, tablet e desktop
-- Instalável como aplicativo (PWA) com `manifest.json` e Service Worker
-- Funciona offline após o primeiro acesso
-- Tarefas salvas no navegador com localStorage
+- Adicionar, editar, concluir e remover tarefas
+- Edição inline: clique no lápis, altere o texto e confirme com Enter (ou clicando fora)
+- 🎉 Confete ao concluir uma tarefa
+- Tarefas salvas no navegador com localStorage — feche e abra que elas continuam lá
+- Layout responsivo para celular, tablet e desktop
+- Fonte do campo de texto se ajusta automaticamente em telas pequenas
+- Instalável como aplicativo (PWA) e funciona offline após o primeiro acesso
 
 ## 🛠️ Tecnologias
 
 - **HTML5** — estrutura semântica
-- **CSS3** — estilização e responsividade (media queries)
-- **JavaScript** — manipulação do DOM e lógica da aplicação
-- **PWA** — Web App Manifest + Service Worker
+- **CSS3** — responsividade com media queries, variáveis CSS e checkbox customizado
+- **JavaScript** — manipulação do DOM, delegação de eventos e localStorage
+- **PWA** — Web App Manifest + Service Worker com cache versionado
+- **canvas-confetti** — efeito de confete ao concluir tarefas
+- **Google Fonts** — fonte Quicksand
 
 ## 🚀 Como rodar localmente
 
@@ -37,14 +41,14 @@ Depois é só abrir o `index.html` no navegador.
 
 ## 📱 Instalando como app
 
-Acesse o site pelo celular ou desktop e o navegador vai oferecer a opção de instalar o app (ícone de instalação na barra de endereço ou "Adicionar à tela inicial").
+Acesse o site publicado pelo celular ou desktop e o navegador vai oferecer a opção de instalar o app (ícone de instalação na barra de endereço ou "Adicionar à tela inicial").
 
 ## 📚 O que aprendi
 
-- Como transformar um site em PWA com manifest e Service Worker
-- Criação de layouts responsivos com media queries
-- Manipulação do DOM com JavaScript puro
-- Como fazer os dados persistirem com localStorage
+- Delegação de eventos para lidar com elementos criados dinamicamente
+- Persistência de dados com localStorage (salvar, carregar e sincronizar edições)
+- Como transformar um site em PWA: manifest, service worker e estratégia de cache
+- Responsividade com media queries e ajustes de UX para mobile
 
 ## 👤 Autor
 
