@@ -1,32 +1,14 @@
-// ================================
-// ETAPA 3 — CACHE + VERSÃO
-// ================================
-
-// Nome da versão do cache
 const CACHE_NAME = "todo-app-v3";
 
-// Arquivos que serão salvos para funcionar offline
-const FILES_TO_CACHE = [
-  "index.html",
-  "css/main.css",
-  "css/normalize.css",
-  "script.js",
-  "manifest.json",
-  "icons/icon-192.png",
-  "icons/icon-512.png",
-];
+const FILES_TO_CACHE = ["index.html", "css/main.css", "css/normalize.css", "script.js", "manifest.json", "icons/icon-192.png", "icons/icon-512.png"];
 
-// Instalação do Service Worker → cria o cache
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(FILES_TO_CACHE);
-    })
+    }),
   );
 });
-// ================================
-// ETAPA 4 – ATIVAR + LIMPAR CACHE ANTIGO
-// ================================
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
@@ -37,39 +19,31 @@ self.addEventListener("activate", (event) => {
             console.log("🗑️ Deletando cache antigo:", cache);
             return caches.delete(cache);
           }
-        })
+        }),
       );
-    })
+    }),
   );
 
-  self.clients.claim(); // ativa imediatamente
+  self.clients.claim();
 });
-// ====================================
-// ETAPA 5 – INTERCEPTAR REQUISIÇÕES (FETCH)
-// ====================================
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      // Se existir no cache, devolve
       if (cachedResponse) {
         return cachedResponse;
       }
 
-      // Se não existir no cache → busca da internet
       return fetch(event.request)
         .then((networkResponse) => {
-          // Salva no cache para uso futuro
           return caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, networkResponse.clone());
             return networkResponse;
           });
         })
         .catch(() => {
-          // ⚠️ Aqui você pode definir um fallback offline
-          // Ex: retornar uma página offline.html
-          return caches.match("/responsive-to-do-list/index.html");
+          return caches.match("index.html");
         });
-    })
+    }),
   );
 });
