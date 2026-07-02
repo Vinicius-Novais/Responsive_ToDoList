@@ -1,4 +1,4 @@
-const CACHE_NAME = "todo-app-v3";
+const CACHE_NAME = "todo-app-v4";
 
 const FILES_TO_CACHE = ["index.html", "css/main.css", "css/normalize.css", "script.js", "manifest.json", "icons/icon-192.png", "icons/icon-512.png"];
 
