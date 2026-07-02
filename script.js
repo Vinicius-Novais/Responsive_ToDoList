@@ -152,6 +152,7 @@ function createElements() {
 
 function inputContent(span) {
   span.textContent = input.value;
+  input.value = "";
 }
 
 function renderTask(elements) {
