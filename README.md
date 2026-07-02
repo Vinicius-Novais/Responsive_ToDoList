@@ -4,7 +4,7 @@ Aplicação de lista de tarefas responsiva e instalável como app (PWA), constru
 
 🔗 **[Ver o projeto no ar](https://vinicius-novais.github.io/Responsive_ToDoList/)**
 
-![Screenshot do projeto](./toDoList.png)
+![Screenshot do projeto](./todolist.png)
 
 ## ✨ Funcionalidades
 
